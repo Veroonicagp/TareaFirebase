@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: FIREBASE, useValue:  {
+    { provide: , useValue:  {
       apiKey: "AIzaSyACYKe4h2-pAh4rW2ENDmGLB3EYsvT8WLg",
       authDomain: "nueva-e5fd9.firebaseapp.com",
       projectId: "nueva-e5fd9",

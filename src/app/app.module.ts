@@ -7,6 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { initializeApp } from 'firebase/app';
+
 
 
 
@@ -20,17 +22,17 @@ const firebaseConfig = {
   measurementId: "G-C3N8HVJK7Q"
 };
 
+const app = initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, 
             IonicModule.forRoot(),  
             AppRoutingModule,
-            //provideFirebaseApp(() => initializeApp(firebaseConfig)),
       ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: 'FirebaseConfig', useValue: firebaseConfig }, 
+    { provide: 'FirebaseConfig', useValue: app }, 
   ],
   bootstrap: [AppComponent],
 
